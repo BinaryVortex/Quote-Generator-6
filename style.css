@@ -1,0 +1,156 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('k.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #444;
+    position: relative;
+}
+
+/* Gradient Overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.3), rgba(0, 204, 255, 0.3), rgba(255, 255, 0, 0.3));
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: gradientShift 15s ease infinite;
+    pointer-events: none;
+}
+
+/* Minimalist Container Styling with Hover Effect */
+.quote-container {
+    background: rgba(255, 255, 255, 0.85);
+    color: #222;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.quote-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Title styling */
+.qofday {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Quote styling */
+.quote {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 25px;
+    min-height: 120px;
+}
+
+.content {
+    font-size: 22px;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.author {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* Button Styling */
+.gen {
+    font-size: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    background: linear-gradient(135deg, #8a2be2, #ff4500, #ffd700);
+    background-size: 200% 200%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-position 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gen:hover {
+    transform: scale(1.1);
+    background-position: right center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gen:active {
+    transform: scale(0.98);
+}
+
+.gen:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-container {
+        padding: 25px;
+    }
+
+    .qofday {
+        font-size: 28px;
+    }
+
+    .content {
+        font-size: 20px;
+    }
+
+    .author {
+        font-size: 16px;
+    }
+
+    .gen {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-container {
+        padding: 20px;
+    }
+
+    .qofday {
+        font-size: 24px;
+    }
+
+    .content {
+        font-size: 18px;
+    }
+
+    .gen {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
